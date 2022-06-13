@@ -6,5 +6,5 @@ set -e
 apt update -y
 apt-get install -y nginx
 ufw allow 'Nginx Full'
-# ufw enable
+ufw enable
 systemctl reload nginx

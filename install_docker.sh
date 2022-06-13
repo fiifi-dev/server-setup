@@ -19,7 +19,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plu
 usermod -aG docker $USER
 
 # Install compose
-VERSION=V2.6.0
+VERSION=v2.6.0
 sudo curl -L "https://github.com/docker/compose/releases/download/$VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
@@ -27,6 +27,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 curl -fsSL https://raw.githubusercontent.com/MatchbookLab/local-persist/master/scripts/install.sh | sudo bash
 
 # open swarm port
+ufw allow 22
 ufw allow 2377/tcp
 ufw allow 7946/tcp && ufw allow 7946/udp
 ufw allow 4789/udp
